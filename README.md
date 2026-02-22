@@ -37,3 +37,69 @@ CortexShield is a next-generation malware detection system that uses machine lea
 ---
 
 ## 🏗️ Architecture
+CortexShield/
+│
+├── backend/ # Flask API + ML models
+│ ├── app.py # Main server
+│ ├── train_model.py # Model training
+│ └── models/ # Trained models
+│
+├── frontend/ # HTML/CSS/JS UI
+│ ├── index.html # Main page
+│ ├── style.css # Styling
+│ └── script.js # Interactions
+│
+└── requirements.txt # Dependencies
+
+---
+
+## 🧠 Machine Learning Model
+
+- **Algorithm**: Random Forest Classifier
+- **Features**: File size, entropy, sections count, imports count, debug info, resources
+- **Classes**: Benign, Ransomware, Trojan, Spyware, Worm
+- **Accuracy**: ~94% on test data
+
+---
+
+## 🚀 Installation & Setup
+
+### Prerequisites
+- Python 3.8+
+- pip
+- Git
+
+### Steps
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/CortexShield.git
+cd CortexShield
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Generate sample data
+cd backend
+python generate_sample_data.py
+
+# 4. Train models
+python train_model.py
+
+# 5. Run the server
+python app.py
+
+# 6. Open browser
+http://127.0.0.1:5000
+🎯 How It Works
+User uploads a file (or provides URL)
+
+Feature extraction: System analyzes file statistics
+
+ML prediction: Random Forest classifies as safe/malware
+
+If malware: Family is identified (ransomware, etc.)
+
+Impact analysis: Shows potential damage
+
+Simulation: Visual step-by-step execution in virtual Windows environment
