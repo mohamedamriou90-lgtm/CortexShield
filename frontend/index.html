@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CortexShield-by-AmriouMohamed - AI Malware Scanner</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">🛡️ CortexShield</h1>
+            <div class="byline">by <strong>Amriou Mohamed</strong></div>
+            <p class="tagline">Next-Generation AI-Powered Malware Detection & Impact Simulation</p>
+        </header>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active" id="fileTab">📁 File Scan</button>
+            <button class="tab" id="urlTab">🔗 URL Scan</button>
+        </div>
+
+        <!-- File Panel -->
+        <div id="filePanel" class="panel active">
+            <div class="drop-area" id="dropArea">
+                <div class="drop-message">
+                    <span class="icon">📂</span>
+                    <p>Drag & drop a file here, or <span class="browse">browse</span></p>
+                    <p class="small">Supports .exe, .dll, .scr (simulated analysis)</p>
+                </div>
+                <input type="file" id="fileInput" hidden>
+            </div>
+        </div>
+
+        <!-- URL Panel -->
+        <div id="urlPanel" class="panel">
+            <div class="url-input-area">
+                <input type="url" id="urlInput" placeholder="https://example.com/file.exe">
+                <button id="scanUrlBtn">Scan URL</button>
+            </div>
+        </div>
+
+        <!-- Results Area (hidden initially) -->
+        <div id="results" class="results hidden">
+            <!-- Main result card -->
+            <div id="resultCard" class="result-card"></div>
+
+            <!-- Indicators -->
+            <div id="indicators" class="indicators"></div>
+
+            <!-- Feature Importance Chart -->
+            <div class="chart-container">
+                <h3>📊 Feature Importance</h3>
+                <canvas id="importanceChart" width="400" height="200"></canvas>
+            </div>
+
+            <!-- Impact Analysis -->
+            <div id="impact" class="impact hidden">
+                <h3>🔍 Impact Analysis</h3>
+                <ul id="impactList"></ul>
+            </div>
+
+            <!-- Simulation Section -->
+            <div id="simulation" class="simulation-container hidden">
+                <h3>⏱️ Execution Simulation</h3>
+                <div class="windows-desktop" id="windowsDesktop">
+                    <div class="desktop-icons">
+                        <div class="icon" id="doc1">📄 Document1</div>
+                        <div class="icon" id="doc2">📄 Document2</div>
+                        <div class="icon" id="pic1">🖼️ Photo</div>
+                        <div class="icon" id="folder">📁 Projects</div>
+                    </div>
+                    <div class="taskbar">
+                        <span class="start">🪟 Start</span>
+                        <span class="time" id="simTime">0s</span>
+                    </div>
+                    <div class="popup hidden" id="ransomPopup">
+                        <div class="popup-title">⚠️ WARNING</div>
+                        <div class="popup-content">Your files have been encrypted!</div>
+                        <button class="popup-close" onclick="this.parentElement.classList.add('hidden')">×</button>
+                    </div>
+                </div>
+                <div class="sim-controls">
+                    <button id="playSim">▶ Play Simulation</button>
+                    <button id="resetSim">⟲ Reset</button>
+                    <span id="stepDescription"></span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>CortexShield-by-AmriouMohamed — Advanced Malware Analysis Platform</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
